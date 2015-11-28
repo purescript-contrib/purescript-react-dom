@@ -1,0 +1,8 @@
+{
+  "name": "purescript-react-dom",
+  "main": "",
+  "ignore": [
+    "*",
+    "!src/**/*"
+  ]
+}
