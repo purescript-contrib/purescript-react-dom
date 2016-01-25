@@ -30,6 +30,7 @@ foreign import renderFn
 -- | Removes a mounted React element in a document element. Returns true if it was unmounted, false otherwise.
 foreign import unmountComponentAtNode :: forall eff. Element -> Eff (dom :: DOM | eff) Boolean
 
+-- | Finds the DOM node rendered by the component.
 foreign import findDOMNode :: forall eff. ReactComponent -> Eff (dom :: DOM | eff) Element
 
 -- | Render a React element as a string.

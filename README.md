@@ -12,4 +12,4 @@ bower install purescript-react-dom
 
 ## Example
 
-Please refer to [purescript-react-example](https://github.com/purescript-contrib/purescript-react)
+Please refer to [purescript-react-example](https://github.com/ethul/purescript-react-example)
