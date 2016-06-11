@@ -16,7 +16,8 @@
     "url": "git://github.com/purescript-contrib/purescript-react-dom.git"
   },
   "dependencies": {
-    "purescript-dom": "~0.2.15",
-    "purescript-react": "~0.7.0"
+    "purescript-dom": "^1.0.0",
+    "purescript-react": "~0.7.1",
+    "purescript-eff-functions": "^0.1.2"
   }
 }

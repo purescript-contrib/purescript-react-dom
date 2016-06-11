@@ -1,34 +1,16 @@
 /* global exports */
 "use strict";
 
-// module ReactDOM
+var ReactDOM = require("react-dom");
+var ReactDOMServer = require("react-dom/server");
 
-var ReactDOM = require('react-dom');
+exports.renderImpl = function (nothing, just, element, container) {
+  var result = ReactDOM.render(element, container);
+  return result === null ? nothing : just(result);
+};
 
-var ReactDOMServer = require('react-dom/server');
+exports.unmountComponentAtNodeImpl = ReactDOM.unmountComponentAtNode;
+exports.findDOMNodeImpl = ReactDOM.findDOMNode;
 
-function renderFn(nothing, just, element, container) {
-  return function(){
-    var result = ReactDOM.render(element, container);
-    return result === null ? nothing : just(result);
-  }
-}
-exports.renderFn = renderFn;
-
-function unmountComponentAtNode(container) {
-  return function(){
-    return ReactDOM.unmountComponentAtNode(container);
-  };
-}
-exports.unmountComponentAtNode = unmountComponentAtNode;
-
-function findDOMNode(component) {
-  return function(){
-    return ReactDOM.findDOMNode(component);
-  };
-}
-exports.findDOMNode = findDOMNode;
-
-exports.renderToString = ReactDOMServer.renderToString;
-
-exports.renderToStaticMarkup = ReactDOMServer.renderToStaticMarkup;
+exports.renderToStringImpl = ReactDOMServer.renderToString;
+exports.renderToStaticMarkupImpl = ReactDOMServer.renderToStaticMarkup;
