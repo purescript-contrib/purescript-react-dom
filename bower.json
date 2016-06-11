@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "purescript-dom": "^1.0.0",
-    "purescript-react": "~0.7.1",
-    "purescript-eff-functions": "^0.1.2"
+    "purescript-react": "^1.0.0",
+    "purescript-eff-functions": "paf31/purescript-eff-functions#bump-deps"
   }
 }

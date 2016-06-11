@@ -14,7 +14,8 @@ Render a React element in a document element. Returns Nothing for stateless comp
 unmountComponentAtNode :: forall eff. Element -> Eff (dom :: DOM | eff) Boolean
 ```
 
-Removes a mounted React element in a document element. Returns true if it was unmounted, false otherwise.
+Removes a mounted React element in a document element.
+Returns true if it was unmounted, false otherwise.
 
 #### `findDOMNode`
 
