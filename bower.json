@@ -18,6 +18,6 @@
   "dependencies": {
     "purescript-dom": "^1.0.0",
     "purescript-react": "^1.0.0",
-    "purescript-eff-functions": "paf31/purescript-eff-functions#bump-deps"
+    "purescript-eff-functions": "^1.0.0"
   }
 }
