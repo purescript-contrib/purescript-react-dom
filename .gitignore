@@ -7,3 +7,5 @@ node_modules/
 bower_components/
 tmp/
 output/
+.psc-ide-port
+.psc-package/
