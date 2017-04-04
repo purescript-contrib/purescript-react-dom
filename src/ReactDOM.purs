@@ -7,16 +7,19 @@ module ReactDOM
   ) where
 
 import Control.Monad.Eff (Eff)
-import DOM (DOM)
-import DOM.Node.Types (Element)
-import Data.Function.Eff (runEffFn1, EffFn4, EffFn1, runEffFn4)
+import Control.Monad.Eff.Uncurried (runEffFn1, EffFn4, EffFn1, runEffFn4)
 import Data.Function.Uncurried (runFn1, Fn1)
 import Data.Maybe (Maybe(..))
+import DOM (DOM)
+import DOM.Node.Types (Element)
 import React (ReactElement, ReactComponent)
 
 -- | Render a React element in a document element. Returns Nothing for stateless components.
-render :: forall eff.
-  ReactElement -> Element -> Eff (dom :: DOM | eff) (Maybe ReactComponent)
+render
+  :: forall eff
+   . ReactElement
+  -> Element
+  -> Eff (dom :: DOM | eff) (Maybe ReactComponent)
 render = runEffFn4 renderImpl Nothing Just
 
 -- | Removes a mounted React element in a document element.
@@ -36,26 +39,29 @@ renderToString = runFn1 renderToStringImpl
 renderToStaticMarkup :: ReactElement -> String
 renderToStaticMarkup = runFn1 renderToStaticMarkupImpl
 
-foreign import renderImpl :: forall eff.
-  EffFn4
-    (dom :: DOM | eff)
-    (Maybe ReactComponent)
-    (ReactComponent -> Maybe ReactComponent)
-    ReactElement
-    Element
-    (Maybe ReactComponent)
+foreign import renderImpl
+  :: forall eff
+   . EffFn4
+       (dom :: DOM | eff)
+       (Maybe ReactComponent)
+       (ReactComponent -> Maybe ReactComponent)
+       ReactElement
+       Element
+       (Maybe ReactComponent)
 
-foreign import unmountComponentAtNodeImpl :: forall eff.
-  EffFn1
-    (dom :: DOM | eff)
-    Element
-    Boolean
+foreign import unmountComponentAtNodeImpl
+  :: forall eff
+   . EffFn1
+       (dom :: DOM | eff)
+       Element
+       Boolean
 
-foreign import findDOMNodeImpl :: forall eff.
-  EffFn1
-    (dom :: DOM | eff)
-    ReactComponent
-    Element
+foreign import findDOMNodeImpl
+  :: forall eff
+   . EffFn1
+       (dom :: DOM | eff)
+       ReactComponent
+       Element
 
 foreign import renderToStringImpl :: Fn1 ReactElement String
 
