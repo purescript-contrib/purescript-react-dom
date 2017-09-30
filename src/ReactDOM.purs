@@ -4,15 +4,18 @@ module ReactDOM
   , findDOMNode
   , renderToString
   , renderToStaticMarkup
+  , refToNode
   ) where
 
 import Control.Monad.Eff (Eff)
 import Control.Monad.Eff.Uncurried (runEffFn1, EffFn4, EffFn1, runEffFn4)
+import DOM (DOM)
+import DOM.Node.Types (Element, Node)
 import Data.Function.Uncurried (runFn1, Fn1)
 import Data.Maybe (Maybe(..))
-import DOM (DOM)
-import DOM.Node.Types (Element)
-import React (ReactElement, ReactComponent)
+import Data.Nullable (toMaybe)
+import React (ReactElement, ReactComponent, Ref)
+import Unsafe.Coerce (unsafeCoerce)
 
 -- | Render a React element in a document element. Returns Nothing for stateless components.
 render
@@ -66,3 +69,6 @@ foreign import findDOMNodeImpl
 foreign import renderToStringImpl :: Fn1 ReactElement String
 
 foreign import renderToStaticMarkupImpl :: Fn1 ReactElement String
+
+refToNode :: Ref -> Maybe Node
+refToNode ref = toMaybe (unsafeCoerce ref)
