@@ -13,7 +13,7 @@ import DOM (DOM)
 import DOM.Node.Types (Element, Node)
 import Data.Function.Uncurried (runFn1, Fn1)
 import Data.Maybe (Maybe(..))
-import Data.Nullable (toMaybe)
+import Data.Nullable (Nullable, toMaybe)
 import React (ReactElement, ReactComponent, Ref)
 import Unsafe.Coerce (unsafeCoerce)
 
@@ -70,5 +70,8 @@ foreign import renderToStringImpl :: Fn1 ReactElement String
 
 foreign import renderToStaticMarkupImpl :: Fn1 ReactElement String
 
-refToNode :: Ref -> Maybe Node
-refToNode ref = toMaybe (unsafeCoerce ref)
+refToNode :: Nullable Ref -> Maybe Node
+refToNode ref = toMaybe (coerce ref)
+  where
+  coerce :: Nullable Ref -> Nullable Node
+  coerce = unsafeCoerce
