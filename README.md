@@ -2,7 +2,7 @@
 
 Low-level React DOM bindings for PureScript
 
-- [Module Documentation](generated-docs/)
+- [Module Documentation](https://pursuit.purescript.org/packages/purescript-react-dom/)
 
 ## Installation
 
