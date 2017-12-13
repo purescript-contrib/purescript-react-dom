@@ -11,6 +11,6 @@
     "rimraf": "^2.5.4"
   },
   "peerDependencies": {
-    "react-dom": "^15.6.1"
+    "react-dom": "^16.0.0"
   }
 }
