@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "purescript-web-dom": "^1.0.0",
-    "purescript-react": "https://github.com/natefaubion/purescript-react.git#compiler/0.12",
+    "purescript-react": "^6.0.0",
     "purescript-effect": "^2.0.0"
   }
 }
