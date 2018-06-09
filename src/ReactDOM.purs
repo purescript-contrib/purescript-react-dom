@@ -4,35 +4,30 @@ module ReactDOM
   , findDOMNode
   , renderToString
   , renderToStaticMarkup
-  , refToNode
   ) where
 
-import Control.Monad.Eff (Eff)
-import Control.Monad.Eff.Uncurried (runEffFn1, EffFn4, EffFn1, runEffFn4)
-import DOM (DOM)
-import DOM.Node.Types (Element, Node)
+import Effect (Effect)
+import Effect.Uncurried (runEffectFn1, EffectFn4, EffectFn1, runEffectFn4)
 import Data.Function.Uncurried (runFn1, Fn1)
 import Data.Maybe (Maybe(..))
-import Data.Nullable (Nullable, toMaybe)
-import React (ReactElement, ReactComponent, Ref)
-import Unsafe.Coerce (unsafeCoerce)
+import React (ReactElement, ReactComponent)
+import Web.DOM.Element (Element)
 
 -- | Render a React element in a document element. Returns Nothing for stateless components.
 render
-  :: forall eff
-   . ReactElement
+  :: ReactElement
   -> Element
-  -> Eff (dom :: DOM | eff) (Maybe ReactComponent)
-render = runEffFn4 renderImpl Nothing Just
+  -> Effect (Maybe ReactComponent)
+render = runEffectFn4 renderImpl Nothing Just
 
 -- | Removes a mounted React element in a document element.
 -- | Returns true if it was unmounted, false otherwise.
-unmountComponentAtNode :: forall eff. Element -> Eff (dom :: DOM | eff) Boolean
-unmountComponentAtNode = runEffFn1 unmountComponentAtNodeImpl
+unmountComponentAtNode :: Element -> Effect Boolean
+unmountComponentAtNode = runEffectFn1 unmountComponentAtNodeImpl
 
 -- | Finds the DOM node rendered by the component.
-findDOMNode :: forall eff. ReactComponent -> Eff (dom :: DOM | eff) Element
-findDOMNode = runEffFn1 findDOMNodeImpl
+findDOMNode :: ReactComponent -> Effect Element
+findDOMNode = runEffectFn1 findDOMNodeImpl
 
 -- | Render a React element as a string.
 renderToString :: ReactElement -> String
@@ -43,9 +38,7 @@ renderToStaticMarkup :: ReactElement -> String
 renderToStaticMarkup = runFn1 renderToStaticMarkupImpl
 
 foreign import renderImpl
-  :: forall eff
-   . EffFn4
-       (dom :: DOM | eff)
+  :: EffectFn4
        (Maybe ReactComponent)
        (ReactComponent -> Maybe ReactComponent)
        ReactElement
@@ -53,25 +46,15 @@ foreign import renderImpl
        (Maybe ReactComponent)
 
 foreign import unmountComponentAtNodeImpl
-  :: forall eff
-   . EffFn1
-       (dom :: DOM | eff)
+  :: EffectFn1
        Element
        Boolean
 
 foreign import findDOMNodeImpl
-  :: forall eff
-   . EffFn1
-       (dom :: DOM | eff)
+  :: EffectFn1
        ReactComponent
        Element
 
 foreign import renderToStringImpl :: Fn1 ReactElement String
 
 foreign import renderToStaticMarkupImpl :: Fn1 ReactElement String
-
-refToNode :: Nullable Ref -> Maybe Node
-refToNode ref = toMaybe (coerce ref)
-  where
-  coerce :: Nullable Ref -> Nullable Node
-  coerce = unsafeCoerce
