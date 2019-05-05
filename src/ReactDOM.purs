@@ -1,15 +1,19 @@
 module ReactDOM
   ( render
+  , hydrate
   , unmountComponentAtNode
   , findDOMNode
   , renderToString
   , renderToStaticMarkup
   ) where
 
-import Effect (Effect)
-import Effect.Uncurried (runEffectFn1, EffectFn4, EffectFn1, runEffectFn4)
+import Prelude
+
 import Data.Function.Uncurried (runFn1, Fn1)
-import Data.Maybe (Maybe(..))
+import Data.Maybe (Maybe)
+import Data.Nullable (Nullable, toMaybe)
+import Effect (Effect)
+import Effect.Uncurried (EffectFn1, EffectFn2, runEffectFn1, runEffectFn2)
 import React (ReactElement, ReactComponent)
 import Web.DOM.Element (Element)
 
@@ -18,7 +22,14 @@ render
   :: ReactElement
   -> Element
   -> Effect (Maybe ReactComponent)
-render = runEffectFn4 renderImpl Nothing Just
+render rEl el = toMaybe <$> runEffectFn2 renderImpl rEl el
+
+-- | Same as `render`, but is used to hydrate a container whose HTML contents were rendered on the server.
+hydrate
+  :: ReactElement
+  -> Element
+  -> Effect (Maybe ReactComponent)
+hydrate rEl el = toMaybe <$> runEffectFn2 hydrateImpl rEl el
 
 -- | Removes a mounted React element in a document element.
 -- | Returns true if it was unmounted, false otherwise.
@@ -38,12 +49,16 @@ renderToStaticMarkup :: ReactElement -> String
 renderToStaticMarkup = runFn1 renderToStaticMarkupImpl
 
 foreign import renderImpl
-  :: EffectFn4
-       (Maybe ReactComponent)
-       (ReactComponent -> Maybe ReactComponent)
+  :: EffectFn2
        ReactElement
        Element
-       (Maybe ReactComponent)
+       (Nullable ReactComponent)
+
+foreign import hydrateImpl
+  :: EffectFn2
+       ReactElement
+       Element
+       (Nullable ReactComponent)
 
 foreign import unmountComponentAtNodeImpl
   :: EffectFn1
