@@ -4,9 +4,12 @@
 var ReactDOM = require("react-dom");
 var ReactDOMServer = require("react-dom/server");
 
-exports.renderImpl = function (nothing, just, element, container) {
-  var result = ReactDOM.render(element, container);
-  return result === null ? nothing : just(result);
+exports.renderImpl = function (element, container) {
+  return ReactDOM.render(element, container);
+};
+
+exports.hydrateImpl = function (element, container) {
+  return ReactDOM.hydrate(element, container);
 };
 
 exports.unmountComponentAtNodeImpl = ReactDOM.unmountComponentAtNode;
