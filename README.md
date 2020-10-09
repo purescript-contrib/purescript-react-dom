@@ -7,8 +7,6 @@
 
 Low-level React DOM bindings for PureScript. You may also be interested in the higher-level [`react-basic-dom`](https://github.com/lumihq/purescript-react-basic-dom) library.
 
-The library summary hasn't been written yet (contributions are welcome!). The library summary describes the library's purpose in one to three sentences.
-
 ## Installation
 
 Install `react-dom` with [Spago](https://github.com/purescript/spago):
