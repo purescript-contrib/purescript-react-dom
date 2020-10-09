@@ -1,9 +1,0 @@
-{
-    "name": "purescript-react-dom",
-    "set": "psc-0.12.5-20190504",
-    "source": "https://github.com/purescript/package-sets.git",
-    "depends": [
-      "web-dom",
-      "react"
-    ]
-}
