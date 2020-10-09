@@ -28,6 +28,7 @@ Other improvements:
 ## [v6.0.0](https://github.com/purescript-contrib/purescript-react-dom/releases/tag/v6.0.0) - 2018-06-09
 
 **Breaking Changes**
+
 - Updates for PureScript 0.12 and React 6.0.0 #11 (@natefaubion)
 
 ## [v5.0.0](https://github.com/purescript-contrib/purescript-react-dom/releases/tag/v5.0.0) - 2017-12-16
@@ -44,21 +45,20 @@ Other improvements:
 
 ## [v4.0.0](https://github.com/purescript-contrib/purescript-react-dom/releases/tag/v4.0.0) - 2017-07-11
 
-Updates for the latest `purescript-react` release (@coot)
+- Updates for the latest `purescript-react` release (@coot)
 
 ## [v3.0.0](https://github.com/purescript-contrib/purescript-react-dom/releases/tag/v3.0.0) - 2017-04-05
 
-Updates for 0.11 compiler
+- Updates for 0.11 compiler
 
 ## [v1.0.0](https://github.com/purescript-contrib/purescript-react-dom/releases/tag/v1.0.0) - 2016-06-12
 
-Compatible with PureScript compiler versions >= 0.9.1 (@spicydonuts)
+- Compatible with PureScript compiler versions >= 0.9.1 (@spicydonuts)
 
 ## [v0.2.0](https://github.com/purescript-contrib/purescript-react-dom/releases/tag/v0.2.0) - 2016-03-05
 
-Release compatible with `purescript-react#v0.7.0` (@kRITZCREEK)
+- Release compatible with `purescript-react#v0.7.0` (@kRITZCREEK)
 
 ## [v0.1.0](https://github.com/purescript-contrib/purescript-react-dom/releases/tag/v0.1.0) - 2016-01-25
 
-Initial release compatible with `purescript-react#v0.6.0`
-
+- Initial release compatible with `purescript-react#v0.6.0`
