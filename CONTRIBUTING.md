@@ -1,4 +1,4 @@
-# Contributing to React Dom
+# Contributing to React DOM
 
 Thanks for your interest in contributing to `react-dom`! We welcome new contributions regardless of your level of experience or familiarity with PureScript.
 

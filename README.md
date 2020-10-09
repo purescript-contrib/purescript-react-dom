@@ -1,4 +1,4 @@
-# React Dom
+# React DOM
 
 [![CI](https://github.com/purescript-contrib/purescript-react-dom/workflows/CI/badge.svg?branch=main)](https://github.com/purescript-contrib/purescript-react-dom/actions?query=workflow%3ACI+branch%3Amain)
 [![Release](https://img.shields.io/github/release/purescript-contrib/purescript-react-dom.svg)](https://github.com/purescript-contrib/purescript-react-dom/releases)
