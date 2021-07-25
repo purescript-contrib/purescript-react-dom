@@ -13,11 +13,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https:://github.com/purescript-contrib/purescript-react-dom.git"
+    "url": "https://github.com/purescript-contrib/purescript-react-dom.git"
   },
   "dependencies": {
-    "purescript-web-dom": "^2.0.0",
-    "purescript-react": ">= 6.0.0 < 8.0.0",
-    "purescript-effect": "^2.0.0"
+    "purescript-effect": "^3.0.0",
+    "purescript-react": "^9.0.0",
+    "purescript-web-dom": "^5.0.0"
+  },
+  "devDependencies": {
+    "purescript-console": "^5.0.0"
   }
 }
