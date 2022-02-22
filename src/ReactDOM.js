@@ -1,18 +1,17 @@
 "use strict";
 
-var ReactDOM = require("react-dom");
-var ReactDOMServer = require("react-dom/server");
+import ReactDOM from "react-dom";
+import ReactDOMServer from "react-dom/server";
 
-exports.renderImpl = function (element, container) {
+export function renderImpl(element, container) {
   return ReactDOM.render(element, container);
-};
+}
 
-exports.hydrateImpl = function (element, container) {
+export function hydrateImpl(element, container) {
   return ReactDOM.hydrate(element, container);
-};
+}
 
-exports.unmountComponentAtNodeImpl = ReactDOM.unmountComponentAtNode;
-exports.findDOMNodeImpl = ReactDOM.findDOMNode;
-
-exports.renderToStringImpl = ReactDOMServer.renderToString;
-exports.renderToStaticMarkupImpl = ReactDOMServer.renderToStaticMarkup;
+export const unmountComponentAtNodeImpl = ReactDOM.unmountComponentAtNode;
+export const findDOMNodeImpl = ReactDOM.findDOMNode;
+export const renderToStringImpl = ReactDOMServer.renderToString;
+export const renderToStaticMarkupImpl = ReactDOMServer.renderToStaticMarkup;
