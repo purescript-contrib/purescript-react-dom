@@ -11,7 +11,7 @@ export function hydrateImpl(element, container) {
   return ReactDOM.hydrate(element, container);
 }
 
-export var unmountComponentAtNodeImpl = ReactDOM.unmountComponentAtNode;
-export var findDOMNodeImpl = ReactDOM.findDOMNode;
-export var renderToStringImpl = ReactDOMServer.renderToString;
-export var renderToStaticMarkupImpl = ReactDOMServer.renderToStaticMarkup;
+export const unmountComponentAtNodeImpl = ReactDOM.unmountComponentAtNode;
+export const findDOMNodeImpl = ReactDOM.findDOMNode;
+export const renderToStringImpl = ReactDOMServer.renderToString;
+export const renderToStaticMarkupImpl = ReactDOMServer.renderToStaticMarkup;
