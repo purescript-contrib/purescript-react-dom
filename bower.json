@@ -16,11 +16,11 @@
     "url": "https://github.com/purescript-contrib/purescript-react-dom.git"
   },
   "dependencies": {
-    "purescript-effect": "master",
-    "purescript-react": "main",
-    "purescript-web-dom": "master"
+    "purescript-effect": "^4.0.0",
+    "purescript-react": "^10.0.1",
+    "purescript-web-dom": "^6.0.0"
   },
   "devDependencies": {
-    "purescript-console": "master"
+    "purescript-console": "^6.0.0"
   }
 }
