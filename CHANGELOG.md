@@ -5,6 +5,16 @@ Notable changes to this project are documented in this file. The format is based
 ## [Unreleased]
 
 Breaking changes:
+
+New features:
+
+Bugfixes:
+
+Other improvements:
+
+## [v8.0.0](https://github.com/purescript-contrib/purescript-react-dom/releases/tag/v8.0.0) - 2022-04-27
+
+Breaking changes:
 - Migrate FFI to ES modules (#28 by @JordanMartinez)
 
 New features:
