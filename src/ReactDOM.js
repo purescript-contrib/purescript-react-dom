@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom";
-import ReactDOMServer from "react-dom/server";
+import ReactDOMServer from "react-dom/server.js";
 
 export function renderImpl(element, container) {
   return ReactDOM.render(element, container);
