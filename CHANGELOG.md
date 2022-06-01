@@ -9,6 +9,7 @@ Breaking changes:
 New features:
 
 Bugfixes:
+- Added .js extension to react-dom/server import to aid bundlers like Webpack (#32 by @thomashoneyman)
 
 Other improvements:
 
