@@ -1,0 +1,23 @@
+package:
+  name: react-dom
+  dependencies:
+    - effect: ">=4.0.0 <5.0.0"
+    - functions: ">=6.0.0 <7.0.0"
+    - maybe: ">=6.0.0 <7.0.0"
+    - nullable: ">=6.0.0 <7.0.0"
+    - prelude: ">=6.0.0 <7.0.0"
+    - react: ">=10.0.1 <12.0.0"
+    - web-dom: ">=6.0.0 <7.0.0"
+  test:
+    main: Test.Main
+    dependencies:
+      - console: ">=6.0.0 <7.0.0"
+  publish:
+    version: 8.0.1
+    license: MIT
+    location:
+      githubOwner: purescript-contrib
+      githubRepo: purescript-react-dom
+workspace:
+  packageSet:
+    registry: 81.4.0

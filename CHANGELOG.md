@@ -12,6 +12,12 @@ Bugfixes:
 
 Other improvements:
 
+## [v8.0.1](https://github.com/purescript-contrib/purescript-react-dom/releases/tag/v8.0.1) - 2026-10-10
+
+Other improvements:
+- Migrate to registry-backed Spago, preserving published dependency ranges.
+- Update development tooling and CI actions.
+
 ## [v8.0.0](https://github.com/purescript-contrib/purescript-react-dom/releases/tag/v8.0.0) - 2022-04-27
 
 Breaking changes:
